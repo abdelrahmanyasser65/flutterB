@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterb/animatino/animatedcontainer.dart';
 import 'package:flutterb/animatino/animatedopacity.dart';
+import 'package:flutterb/animatino/animatedpositiioned.dart';
 import 'package:flutterb/widget/colorpicker.dart';
 import 'package:flutterb/widget/pageview.dart';
 import 'package:provider/provider.dart';
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
       //provider Example2
       //  home:HomepageCounter(),
 
-      home: AnimatedOpacityW(),
+      home: AnimatedPositionW(),
     );
   }
 }
