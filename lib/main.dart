@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterb/state_management/riverpod/counterproR.dart';
+import 'package:flutterb/state_management/provider/provider.dart';
+import 'package:flutterb/state_management/provider_example/home.dart';
+import 'package:flutterb/state_management/provider_example/myProvider.dart';
 import 'package:flutterb/widget/colorpicker.dart';
 import 'package:flutterb/widget/pageview.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -29,8 +28,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //GetX
     // Get.put(CounterController());
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
+    return  MaterialApp(
+      themeMode:ThemeMode.light,
+      darkTheme: ThemeData(
+        primaryColor: Colors.black
+      ),
+      theme: ThemeData(
+          primaryColor: Colors.blue,
+          primarySwatch: Colors.deepOrange),
       debugShowCheckedModeBanner: false,
       //provider
       // home:ChangeNotifierProvider<MyProvider>(
@@ -46,9 +51,40 @@ class MyApp extends StatelessWidget {
       //   child: CounterBPro(),
       // ),
 
-      home:ProviderScope(
-        child: CounterRPro(),
-      ),
+
+      //Riverpod
+      // home:ProviderScope(
+      //   child: CounterRPro(),
+      // ),
+
+       home: Container(),
     );
   }
 }
+
+
+//
+// provider Example
+// home: ChangeNotifierProvider<MyProviderE>(
+// create:(_)=>MyProviderE(),
+// child: MyHomepage(),
+// ),
+// class MyHomepage extends StatelessWidget {
+//   const MyHomepage({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       themeMode:Provider.of<MyProviderE>(context).th,
+//       darkTheme: ThemeData(
+//           primaryColor: Colors.black
+//       ),
+//       theme: ThemeData(
+//           primaryColor: Colors.blue,
+//           primarySwatch: Colors.deepOrange),
+//       debugShowCheckedModeBanner: false,
+//       home: HomeProvider(),
+//     );
+//   }
+// }
+//
