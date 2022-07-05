@@ -1,40 +1,47 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-class AnimatedContainerW extends StatefulWidget {
-  const AnimatedContainerW({Key? key}) : super(key: key);
+class AnimatedOpacityW extends StatefulWidget {
+  const AnimatedOpacityW({Key? key}) : super(key: key);
 
   @override
-  State<AnimatedContainerW> createState() => _AnimatedContainerWState();
+  State<AnimatedOpacityW> createState() => _AnimatedOpacityWState();
 }
 
-class _AnimatedContainerWState extends State<AnimatedContainerW> {
+class _AnimatedOpacityWState extends State<AnimatedOpacityW> {
   double _width = 50;
   double height = 50;
   Color color = Colors.green;
+  bool visible = true;
   BorderRadiusGeometry borderRadiusGeometry = BorderRadius.circular(8);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Container'),
+        title: const Text('Animated Opacity'),
       ),
       body: Center(
-        child: AnimatedContainer(
+        child: AnimatedOpacity(
+          opacity: visible == true ? 1 : 0,
           duration: const Duration(seconds: 1),
-          curve: Curves.easeInCirc,
-          height: height,
-          width: _width,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: borderRadiusGeometry,
+          child: AnimatedContainer(
+            duration: const Duration(seconds: 1),
+            curve: Curves.easeInCirc,
+            height: height,
+            width: _width,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: borderRadiusGeometry,
+            ),
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
+            visible = !visible;
             Random random = Random();
 
             _width = random.nextInt(300).toDouble();
