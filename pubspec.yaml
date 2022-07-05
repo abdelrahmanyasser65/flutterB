@@ -48,6 +48,10 @@ dependencies:
   page_view_dot_indicator:
   provider:
   get:
+  flutter_bloc: ^8.0.1
+  riverpod:
+  hooks_riverpod:
+  equatable:
 
 dev_dependencies:
   flutter_test:
