@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterb/state_management/provider/provider.dart';
-import 'package:flutterb/state_management/provider_example/home.dart';
-import 'package:flutterb/state_management/provider_example/myProvider.dart';
 import 'package:flutterb/widget/colorpicker.dart';
 import 'package:flutterb/widget/pageview.dart';
 import 'package:provider/provider.dart';
@@ -28,14 +25,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //GetX
     // Get.put(CounterController());
-    return  MaterialApp(
-      themeMode:ThemeMode.light,
-      darkTheme: ThemeData(
-        primaryColor: Colors.black
-      ),
+    return MaterialApp(
+      themeMode: ThemeMode.light,
+      darkTheme: ThemeData(primaryColor: Colors.black),
       theme: ThemeData(
-          primaryColor: Colors.blue,
-          primarySwatch: Colors.deepOrange),
+          primaryColor: Colors.blue, primarySwatch: Colors.deepOrange),
       debugShowCheckedModeBanner: false,
       //provider
       // home:ChangeNotifierProvider<MyProvider>(
@@ -51,17 +45,17 @@ class MyApp extends StatelessWidget {
       //   child: CounterBPro(),
       // ),
 
-
       //Riverpod
       // home:ProviderScope(
       //   child: CounterRPro(),
       // ),
 
-       home: Container(),
+      //provider Example2
+      //  home:HomepageCounter(),
+    home: Container(),
     );
   }
 }
-
 
 //
 // provider Example
