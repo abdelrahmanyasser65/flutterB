@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterb/animatino/animatedAlign.dart';
 import 'package:flutterb/animatino/animatedcontainer.dart';
 import 'package:flutterb/animatino/animatedopacity.dart';
 import 'package:flutterb/animatino/animatedpadding.dart';
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
       //provider Example2
       //  home:HomepageCounter(),
 
-      home: AnimatedPaddingW(),
+      home: AnimatedAlignW(),
     );
   }
 }
