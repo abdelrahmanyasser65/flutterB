@@ -9,6 +9,8 @@ import 'package:flutterb/widget/pageview.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'animatino/defaulttextstyle.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -58,7 +60,7 @@ class MyApp extends StatelessWidget {
       //provider Example2
       //  home:HomepageCounter(),
 
-      home: AnimatedAlignW(),
+      home: AnimatedDefaultTextStyleW(),
     );
   }
 }
